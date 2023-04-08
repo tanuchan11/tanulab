@@ -11,7 +11,7 @@ site_dir: './docs'
 markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets:
-      base_path: ['./src']
+      base_path: ['./lab']
   - pymdownx.superfences
   - pymdownx.arithmatex:
       generic: true
