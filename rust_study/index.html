@@ -576,7 +576,7 @@
 </span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">push_str</span><span class="p">(</span><span class="s">&quot;, world&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 変更可能な参照(mutable reference)</span>
 </span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>値の同一性を保証するため，変更可能な参照(mutable reference)は複数行うことができない．またimmutable referenceがすでに貸し出されているときに追加でmutable referenceを貸し出すこともできない．また，以下のように実体がない参照（dangling pointer）を返す関数はコンパイルできない:</p>
+<p>値の同一性を保証するため，変更可能な参照(mutable reference)は複数行うことができない．immutable referenceがすでに貸し出されているときに追加でmutable referenceを貸し出すこともできない．さらに，これは若干自明だが以下のように実体がない参照（dangling pointer）を返す関数はコンパイルできない:</p>
 <div class="language-rust highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">foo</span><span class="p">();</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">}</span>
