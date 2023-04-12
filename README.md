@@ -11,5 +11,5 @@ pip install mkdocs mkdocs-material
 ## How to deploy
 
 ```bash
-mkdocs build
+mkdocs gh-deploy
 ```
