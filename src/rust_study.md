@@ -116,7 +116,7 @@ Rustでは基本的に浅いコピーが使われる．ただし`Copy` Traitが�
 --8<-- "rust_study/ownership/src/main.rs"
 ```
 
-値の同一性を保証するため，変更可能な参照(mutable reference)は複数行うことができない．またimmutable referenceがすでに貸し出されているときに追加でmutable referenceを貸し出すこともできない．また，以下のように実体がない参照（dangling pointer）を返す関数はコンパイルできない:
+値の同一性を保証するため，変更可能な参照(mutable reference)は複数行うことができない．immutable referenceがすでに貸し出されているときに追加でmutable referenceを貸し出すこともできない．さらに，これは若干自明だが以下のように実体がない参照（dangling pointer）を返す関数はコンパイルできない:
 
 ```rust
 fn main() {
