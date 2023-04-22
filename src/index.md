@@ -7,4 +7,4 @@
 
 ## 目次
 
-- [Rustのお勉強](./rust_study)
+- [Rustでなんか計算してみる](./rust_study)

@@ -1,11 +1,10 @@
-# Rustのお勉強
-
-複雑系の計算や可視化などをやることでRustを学ぼうと思います．
+# Rustの基本を学ぶメモ
 
 ## 資料など
 
 - [The Rust Programming Language](https://doc.rust-lang.org/book/): 公式のドキュメント．日本語訳もあるらしい．
 - [rust-analyzer](https://rust-analyzer.github.io/): VSCodeでrustを書くときの便利拡張機能
+
 
 ## Rustのインストール
 
@@ -141,3 +140,26 @@ fn f(x: &[i32]) {
     println!("x[0] = {} {}", x[0], x.len()); // x[0] = 2 2
 }
 ```
+
+## Struct, Enum
+
+structは名前のついた複数の変数をひとまとめにしたデータ構造である．関数を`impl`を使って実装することができ，ここで使われる`self`はstruct自分自身をあらわす．Selfを引数に持たないmethodはassociated functionと呼ばれ，コンストラクタ的に使われる．
+
+```rust title="struct_sandbox/src/main.rs"
+--8<-- "rust_study/struct_sandbox/src/main.rs"
+```
+
+Enumは複数の名前付きの変数のうちいずれか1つをもつデータ構造である．Rustはnull型のデータを持たないが，値がない場合を許容するデータ表現をEnumで定義している．
+
+```rust
+enum Option<T> {
+    None,
+    Some(T),
+}
+```
+`Some(T)`は任意の型`T`の値`Some`が存在することを示し，`None`は存在しない場合を示す．Optionalな変数がNoneではない場合の処理を定義するのに`match`や`if let`が使える．
+
+```rust title="enum_sandbox/src/main.rs"
+--8<-- "rust_study/enum_sandbox/src/main.rs"
+```
+
